@@ -2,13 +2,15 @@
 <%@ taglib prefix ="c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>view profiles</title>
+    <title>view profiles
+    alert ("123");
+    </title>
 </head>
 <body>
 <table>
     <thead>
         <tr>
-            <th>Name</th>
+            <th>name</th>
             <th>age</th>
             <th>occupation</th>
         </tr>
