@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,4 +32,22 @@ public class SampleController {
 
         return "view_jsp";
     }
+
+    @GetMapping("/sample-thyme")
+    public ModelAndView sampleThyme(){
+        logger.info("in sample thyme");
+        ModelAndView modelAndView = new ModelAndView();
+        List<SamplePayload> profiles = new ArrayList<>();
+
+        profiles.add(new SamplePayload("DESK", 20, "STUDENT"));
+        profiles.add(new SamplePayload("SON", 21, "NURSE"));
+        profiles.add(new SamplePayload("KANE", 22, "SOCCER PLAYER"));
+
+        logger.info("sample-thyme : " + profiles);
+        modelAndView.addObject("profiles", profiles);
+        modelAndView.setViewName("view-thyme");
+        return modelAndView;
+
+    }
+
 }
